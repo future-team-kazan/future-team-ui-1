@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { TestPageComponent } from './test-page/test-page.component';
+import { ChartsComponent } from './charts/charts.component';
 
 // hint Rout-ы ангуляра
 const routes: Routes = [{
@@ -12,6 +13,10 @@ const routes: Routes = [{
     {
       path: 'test-page',
       component: TestPageComponent,
+    },
+    {
+      path: 'charts',
+      component: ChartsComponent,
     },
   ],
 }];

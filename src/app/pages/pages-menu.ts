@@ -9,6 +9,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Графики',
+    icon: 'shopping-cart-outline',
+    link: '/pages/charts',
+  },
+  {
     title: 'Auth',
     icon: 'lock-outline',
     children: [
