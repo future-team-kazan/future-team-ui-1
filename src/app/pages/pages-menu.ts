@@ -9,6 +9,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Tickets',
+    icon: 'shopping-cart-outline',
+    link: '/pages/tickets',
+    home: true,
+  },
+  {
     title: 'Auth',
     icon: 'lock-outline',
     children: [

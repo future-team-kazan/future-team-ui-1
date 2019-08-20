@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>    
+        <nb-select *ngIf="cities" placeholder="Откуда" [(ngModel)]="departureCity"> 
+          <nb-option value="Ульяновск" value="">Откуда</nb-option>
+          <nb-option *ngFor="let city of cities" [value]="city">
+              {{city}}
+          </nb-option>
+        </nb-select>       
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>    
+        <nb-select placeholder="Куда" [(ngModel)]="arrivalCity">
+          <nb-option value="">Куда</nb-option>
+          <nb-option *ngFor="let city of cities" [value]="city">
+              {{city}}
+          </nb-option>
+        </nb-select>       
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-lg-4 col-xxxl-4">
+    <nb-card>
+      <nb-card-body>
+        <input placeholder="Туда" [nbDatepicker]="datepicker" [(ngModel)]="dateStart">
+        <nb-datepicker #datepicker></nb-datepicker>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-6 col-lg-4 col-xxxl-4">
+    <nb-card>
+      <nb-card-body>
+        <input placeholder="Обратно" [nbDatepicker]="datepicker" [(ngModel)]="dateFinish">
+        <nb-datepicker #datepicker></nb-datepicker>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>
+        <input type="text" nbInput fullWidth placeholder="Amount" [(ngModel)]="amount">
+        <button type="submit" nbButton status="primary" (click)="queryData()">Submit</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <nb-card>
+        <nb-card-body>
+          {{departureCity}}
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
