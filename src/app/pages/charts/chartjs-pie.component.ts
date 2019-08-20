@@ -31,9 +31,6 @@ export class ChartjsPieComponent implements OnDestroy {
         },
       ];
 
-      const labels = Stream.from(dataFromService)
-        .map((item) -> (item).label).forEach((n) => console.log(n));
-
       const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
 
