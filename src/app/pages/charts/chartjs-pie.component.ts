@@ -16,20 +16,10 @@ export class ChartjsPieComponent implements OnDestroy {
   constructor(private theme: NbThemeService) {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
-      const dataFromService: any = [
-        {
-          label: 'Download Sales',
-          value: 300,
-        },
-        {
-          label: 'In-Store Sales',
-          value: 500,
-        },
-        {
-          label: 'Mail Sales',
-          value: 100,
-        },
-      ];
+      const dataFromService: any = {
+        labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
+        datasets: [[300, 500, 100]],
+      };
 
       const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
