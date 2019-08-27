@@ -12,13 +12,18 @@ export class TicketsComponent {
   dateFinish: Date;
   amount: number;
   constructor(
+  /*departureCity: string,
+  arrivalCity: string,
+  dateStart: Date,
+  dateFinish: Date,
+  amount: number,*/
     ) {
-
+         /*this.departureCity = departureCity;*/
     }
-  queryData(departureCity: string, arrivalCity: string, dateStart: Date, dateFinish: Date, amount: number) {
+  /*queryData(departureCity: string, arrivalCity: string, dateStart: Date, dateFinish: Date, amount: number) {
     this.departureCity = departureCity;
-    /*console.log(departureCity);*/
-  }
+    console.log(departureCity);
+  }*/
 }
 /*@Component({
   selector: 'my-tickets',
@@ -34,9 +39,9 @@ export class TicketsComponent {
         </div>
     </div>`
 })*/
-/*export class TicketComponentRequest{
-  request: TicketsComponent[] = [];
-  queryData(departureCity: string, arrivalCity: string, dateStart: Date, dateFinish: Date, amount: number){
-    this.request.push (new TicketsComponent( departureCity, arrivalCity, dateStart, dateFinish, amount));
+export class AppComponent {
+  request: TicketsComponent = new TicketsComponent();
+  queryData(departureCity: string, arrivalCity: string, dateStart: Date, dateFinish: Date, amount: number) {
+    this.request.departureCity = departureCity;
  }
-}*/
+}
