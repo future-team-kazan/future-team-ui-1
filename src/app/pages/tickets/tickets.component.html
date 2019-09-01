@@ -49,17 +49,36 @@
     <nb-card>
       <nb-card-body>
         <input type="text" nbInput fullWidth placeholder="Amount" [(ngModel)]="amount">
-        <button type="submit" nbButton status="primary" (click)="queryData()">Submit</button>
+        <button type="submit" nbButton status="primary" (click)="queryData(departureCity, arrivalCity, dateStart, dateFinish, amount)">Submit</button>
       </nb-card-body>
     </nb-card>
   </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
-      <nb-card>
-        <nb-card-body>
-          {{departureCity}}
-        </nb-card-body>
-      </nb-card>
-    </div>
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body *ngFor="let request of requests">
+        <p>{{request.departureCity}}</p>
+      </nb-card-body>
+    </nb-card>
   </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>
+        <p>{{requests.length}}</p>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>
+        <p>{{requests[0].departureCity}}</p>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+  

@@ -1,30 +1,33 @@
 import { Component } from '@angular/core';
 
-@Component({
-  selector: 'ngx-tickets',
-  templateUrl: './tickets.component.html',
-})
-export class TicketsComponent {
-  cities: string[] = ['Ульяновск', 'Москва', 'Казань'];
-  departureCity: string;
+export class TicketComponent {
+   /*departureCity: string;
   arrivalCity: string;
   dateStart: Date;
   dateFinish: Date;
-  amount: number;
+  amount: number;*/
   constructor(
-  /*departureCity: string,
-  arrivalCity: string,
-  dateStart: Date,
-  dateFinish: Date,
-  amount: number,*/
+    public departureCity: string,
+    public arrivalCity: string,
+    public dateStart: Date,
+    public dateFinish: Date,
+    public amount: number,
     ) {
-         /*this.departureCity = departureCity;*/
+         /*this.departureCity = departureCity;
+         this.arrivalCity = arrivalCity;
+         this.dateStart =  dateStart;
+         this.dateFinish = dateFinish;
+         this.amount = amount;*/
     }
   /*queryData(departureCity: string, arrivalCity: string, dateStart: Date, dateFinish: Date, amount: number) {
     this.departureCity = departureCity;
     console.log(departureCity);
   }*/
 }
+@Component({
+  selector: 'ngx-tickets',
+  templateUrl: './tickets.component.html',
+})
 /*@Component({
   selector: 'my-tickets',
   template:
@@ -39,9 +42,10 @@ export class TicketsComponent {
         </div>
     </div>`
 })*/
-export class AppComponent {
-  request: TicketsComponent = new TicketsComponent();
+export class TicketsComponent {
+  cities: string[] = ['Ульяновск', 'Москва', 'Казань'];
+  requests: TicketComponent[] = [];
   queryData(departureCity: string, arrivalCity: string, dateStart: Date, dateFinish: Date, amount: number) {
-    this.request.departureCity = departureCity;
+    this.requests.push(new TicketComponent(departureCity, arrivalCity, dateStart, dateFinish, amount));
  }
 }

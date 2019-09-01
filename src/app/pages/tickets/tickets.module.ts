@@ -27,5 +27,8 @@ import { TicketsComponent } from './tickets.component';
   ],
   providers: [
   ],
+  bootstrap: [
+    TicketsComponent,
+  ],
 })
 export class TicketsModule { }
