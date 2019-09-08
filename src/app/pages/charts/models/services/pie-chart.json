@@ -1,0 +1,7 @@
+{
+  "labels": ["Download Sales", "In-Store Sales", "Mail Sales"],
+  "datasets": [{
+    "label": "Доходы",
+    "data": [65, 59, 80]
+  }]
+}

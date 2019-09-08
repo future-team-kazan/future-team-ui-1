@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { Stream } from 'ts-stream';
+import { PieChartService } from 'app/pages/charts/models/services/pie-chart.service';
+import { ChartData } from 'app/pages/charts/models/data/pie-chart-data';
 
 @Component({
   selector: 'ngx-chartjs-pie',
@@ -12,25 +13,29 @@ export class ChartjsPieComponent implements OnDestroy {
   data: any;
   options: any;
   themeSubscription: any;
+  dataFromServer: any;
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService, private dataSource: PieChartService) {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
-
-      const dataFromService: any = {
-        labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
-        datasets: [[300, 500, 100]],
-      };
 
       const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
 
-      this.data = {
-        labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
-        datasets: [{
-          data: [300, 500, 100],
-          backgroundColor: [colors.primaryLight, colors.infoLight, colors.successLight],
-        }],
-      };
+      dataSource.getChartData().subscribe((data) =>  {
+        this.dataFromServer = data;
+        // console.log(this.dataFromServer);
+
+        this.data = {
+          labels: this.dataFromServer.labels.slice(0, 4),
+          datasets: [{
+            data: this.dataFromServer.dataset[0].data.slice(0, 4),
+            backgroundColor: [colors.primaryLight, colors.infoLight, colors.successLight, colors.warningLight],
+          }],
+        };
+
+      });
+
+
 
       this.options = {
         maintainAspectRatio: false,
