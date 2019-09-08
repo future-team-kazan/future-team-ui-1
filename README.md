@@ -13,3 +13,5 @@ ngx-admin (TypeScript, AngularJS, nebular framework), html, css, scss, npm
 
 
 ### Связанные репозитории
+
+* Репозиторий с мобильным приложением на cordova https://github.com/Jasintar/future-team-cordova
