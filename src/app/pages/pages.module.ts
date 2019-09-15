@@ -7,6 +7,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import {TestPageModule} from './test-page/test-page.module';
 import {TicketsModule} from './tickets/tickets.module';
+import {TicketsResultsModule} from './tickets-results/tickets-results.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {TicketsModule} from './tickets/tickets.module';
     MiscellaneousModule,
     TestPageModule,
     TicketsModule,
+    TicketsResultsModule,
   ],
   declarations: [
     PagesComponent,

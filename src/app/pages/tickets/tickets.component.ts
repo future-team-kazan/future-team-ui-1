@@ -27,6 +27,7 @@ export class TicketComponent {
 @Component({
   selector: 'ngx-tickets',
   templateUrl: './tickets.component.html',
+  styleUrls: ['tickets.component.scss'],
 })
 /*@Component({
   selector: 'my-tickets',

@@ -1,84 +1,71 @@
 <div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-body>    
-        <nb-select *ngIf="cities" placeholder="Откуда" [(ngModel)]="departureCity"> 
-          <nb-option value="Ульяновск" value="">Откуда</nb-option>
-          <nb-option *ngFor="let city of cities" [value]="city">
+  <div class="col-lg-12 col-xs-12">
+    <h1>Поиск авиабилетов</h1>
+  </div>     
+</div> 
+<div class="ticket-content">  
+  <div class="ticket">
+    <div class="ticket__item">
+      <nb-card>
+        <nb-card-body>    
+          <nb-select *ngIf="cities" placeholder="Откуда" fullWidth=true size="large" [(ngModel)]="departureCity"> 
+            <nb-option value="">Откуда</nb-option>
+            <nb-option *ngFor="let city of cities" [value]="city">
               {{city}}
-          </nb-option>
-        </nb-select>       
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-body>    
-        <nb-select placeholder="Куда" [(ngModel)]="arrivalCity">
-          <nb-option value="">Куда</nb-option>
-          <nb-option *ngFor="let city of cities" [value]="city">
+            </nb-option>
+          </nb-select>       
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="ticket__item">
+      <nb-card>
+        <nb-card-body>    
+          <nb-select placeholder="Куда" fullWidth=true size="large" [(ngModel)]="arrivalCity">
+            <nb-option value="">Куда</nb-option>
+            <nb-option *ngFor="let city of cities" [value]="city">
               {{city}}
-          </nb-option>
-        </nb-select>       
-      </nb-card-body>
-    </nb-card>
+            </nb-option>
+          </nb-select>       
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="ticket__item">
+      <nb-card>
+        <nb-card-body>
+          <input placeholder="Туда" [nbDatepicker]="datepicker1" [(ngModel)]="dateStart">
+          <nb-datepicker #datepicker1></nb-datepicker>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="ticket__item">
+      <nb-card>
+        <nb-card-body>
+          <input placeholder="Обратно" [nbDatepicker]="datepicker2" [(ngModel)]="dateFinish">
+          <nb-datepicker #datepicker2></nb-datepicker>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="ticket__item">
+      <nb-card>
+        <nb-card-body>
+          <input type="text" nbInput placeholder="Количество" [(ngModel)]="amount">
+        </nb-card-body>
+      </nb-card>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-6 col-lg-4 col-xxxl-4">
-    <nb-card>
-      <nb-card-body>
-        <input placeholder="Туда" [nbDatepicker]="datepicker" [(ngModel)]="dateStart">
-        <nb-datepicker #datepicker></nb-datepicker>
-      </nb-card-body>
-    </nb-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-xxxl-4">
-    <nb-card>
-      <nb-card-body>
-        <input placeholder="Обратно" [nbDatepicker]="datepicker" [(ngModel)]="dateFinish">
-        <nb-datepicker #datepicker></nb-datepicker>
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
-<div class="row">
+  <div class="row">
+    <div class="ticket__button">
+      <button type="submit" nbButton status="primary" (click)="queryData(departureCity, arrivalCity, dateStart, dateFinish, amount)">Найти билеты</button>
+    </div>  
+  </div>  
+</div>  
+<!--<div class="row">
   <div class="col-md-12">
     <nb-card>
       <nb-card-body>
-        <input type="text" nbInput fullWidth placeholder="Amount" [(ngModel)]="amount">
-        <button type="submit" nbButton status="primary" (click)="queryData(departureCity, arrivalCity, dateStart, dateFinish, amount)">Submit</button>
+        <a ng-reflect-router-link="/pages/tickets-results" href="/pages/tickets-results">Найти</a>
       </nb-card-body>
     </nb-card>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-body *ngFor="let request of requests">
-        <p>{{request.departureCity}}</p>
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-body>
-        <p>{{requests.length}}</p>
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-body>
-        <p>{{requests[0].departureCity}}</p>
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
+</div>-->
   

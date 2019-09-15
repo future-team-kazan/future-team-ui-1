@@ -3,6 +3,7 @@ import {
   NbSelectModule,
   NbDatepickerModule,
   NbButtonModule,
+  NbListModule,
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 
@@ -12,6 +13,7 @@ import {
 import { ThemeModule } from '../../@theme/theme.module';
 
 import { TicketsComponent } from './tickets.component';
+// import { TicketsRoutingModule } from './tickets-routing.module';
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import { TicketsComponent } from './tickets.component';
     NbDatepickerModule,
     NbButtonModule,
     FormsModule,
+    NbListModule,
+    // TicketsRoutingModule,
   ],
   declarations: [
     TicketsComponent,

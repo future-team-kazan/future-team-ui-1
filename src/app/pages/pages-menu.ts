@@ -10,7 +10,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Tickets',
-    icon: 'shopping-cart-outline',
+    icon: 'paper-plane-outline',
     link: '/pages/tickets',
     home: true,
   },
