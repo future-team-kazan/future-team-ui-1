@@ -41,7 +41,7 @@ export class ChartjsBarComponent implements OnDestroy {
           datasets: [{
             data: this.dataFromServer.dataset[0].data.slice(0, 4),
             label: this.dataFromServer.dataset[0].label,
-            backgroundColor: [NbColorHelper.hexToRgbA(colors.primaryLight, 0.8),
+            backgroundColor: NbColorHelper.hexToRgbA(colors.primaryLight, 0.8),
           },
           {
             data: this.dataFromServer.dataset[1].data.slice(0, 4),

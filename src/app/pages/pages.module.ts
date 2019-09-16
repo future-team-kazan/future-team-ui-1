@@ -7,6 +7,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import {TestPageModule} from './test-page/test-page.module';
 import {ChartsModule} from './charts/charts.module';
+import {PersonsModule} from './persons/persons.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import {ChartsModule} from './charts/charts.module';
     MiscellaneousModule,
     TestPageModule,
     ChartsModule,
+    PersonsModule,
   ],
   declarations: [
     PagesComponent,

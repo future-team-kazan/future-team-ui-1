@@ -10,8 +10,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Графики',
-    icon: 'shopping-cart-outline',
+    icon: 'pie-chart-outline',
     link: '/pages/charts',
+  },
+  {
+    title: 'Персонал',
+    icon: 'person',
+    link: '/pages/persons',
   },
   {
     title: 'Auth',

@@ -12,13 +12,13 @@ export class PieChartService implements PieChartData {
 
   private chartDataFile = 'app/pages/charts/models/services/pie-chart.json';
 
-  // private data = {
-  //   labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
-  //   datasets: [{
-  //     label: 'Доходы',
-  //     data: [65, 59, 80]
-  //   }]
-  // };
+  private data = {
+    labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
+    dataset: [{
+      label: 'Доходы',
+      data: [65, 59, 80]
+    }]
+  };
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -29,9 +29,9 @@ export class PieChartService implements PieChartData {
   constructor(private http: HttpClient) { }
 
 
-  // getItems(): Observable<ChartData> {
-  //   return observableOf(this.data);
-  // }
+  getItems(): Observable<ChartData> {
+    return observableOf(this.data);
+  }
 
 
   getChartData(): Observable<ChartData> {
