@@ -1,15 +1,16 @@
 import { Observable } from 'rxjs';
 
 export interface Employee {
-  id: string;
+  id: number;
   name: string;
-  address: string;
+  age: number;
+  price: number;
 }
 
 export abstract class EmployeeData {
   abstract getAll(): Observable<Employee[]>;
-  abstract getOne(id: string): Observable<Employee>;
+  abstract getOne(id: number): Observable<Employee>;
   abstract add(person: Employee): Observable<Employee>;
   abstract update(person: Employee): Observable<Employee>;
-  abstract delete(id: string);
+  abstract delete(id: number);
 }

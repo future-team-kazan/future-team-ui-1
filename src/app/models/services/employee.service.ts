@@ -19,11 +19,20 @@ export class EmployeeService implements EmployeeData {
 
   constructor(private http: HttpClient) { }
 
-  add(person: Employee): Observable<Employee> {
-    return undefined;
+  add(entity: Employee): Observable<Employee> {
+    return this.http.post<Employee>(this.apiUrl + this.chartDataUrl, entity, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
   }
 
-  delete(id: string) {
+  delete(id: number) {
+    return this.http.get<Employee>(this.apiUrl + this.chartDataUrl + '/' + id + '/delete', this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
   }
 
   getAll(): Observable<Employee[]> {
@@ -34,12 +43,20 @@ export class EmployeeService implements EmployeeData {
       );
   }
 
-  getOne(id: string): Observable<Employee> {
-    return undefined;
+  getOne(id: number): Observable<Employee> {
+    return this.http.get<Employee>(this.apiUrl + this.chartDataUrl + '/' + id, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
   }
 
-  update(clinic: Employee): Observable<Employee> {
-    return undefined;
+  update(entity: Employee): Observable<Employee> {
+    return this.http.post<Employee>(this.apiUrl + this.chartDataUrl + '/' + entity.id, entity, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
   }
 
   errorHandl(error) {
@@ -51,6 +68,7 @@ export class EmployeeService implements EmployeeData {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
+    // tslint:disable-next-line:no-console
     console.log(errorMessage);
     return throwError(errorMessage);
   }

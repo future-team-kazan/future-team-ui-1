@@ -5,13 +5,14 @@ import {
 import { ThemeModule } from '../../@theme/theme.module';
 
 import { PersonsComponent } from './persons.component';
-import { PieChartService } from 'app/pages/charts/models/services/pie-chart.service';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmployeeService } from 'app/models/services/employee.service';
 
 @NgModule({
   imports: [
     NbCardModule,
     ThemeModule,
+    Ng2SmartTableModule,
   ],
   declarations: [
     PersonsComponent,
